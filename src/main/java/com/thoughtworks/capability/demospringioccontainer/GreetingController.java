@@ -11,6 +11,7 @@ public class GreetingController {
 
     @Autowired
     public GreetingController(GreetingService greetingService) {
+
         this.greetingService = greetingService;
     }
 
@@ -18,5 +19,6 @@ public class GreetingController {
     public String greet() {
         return greetingService.sayHi();
     }
+
 
 }

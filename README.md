@@ -14,7 +14,9 @@
 
 **Answer : **
 
-Component已经可以解决大部分Spring框架下编写的源码需求了，但是如果遇到了需要调取已经封装好的jar包或者Class，我们无法对这些class进行修改的情况下，可以使用@Bean方式来管理这些类
+Spring 框架在初始化时，被 @Component 注解的类会在扫描默认路径时， 会隐式地向 IoC 容器创建和配置 Bean
+Component已经可以解决大部分Spring框架下编写的源码需求了，但是如果遇到了需要调取已经封装好的jar包或者Class，
+我们无法对这些class进行修改的情况下，可以使用@Bean方式来管理这些类,灵活性得到提升。
 
 ```java
 @Configuration

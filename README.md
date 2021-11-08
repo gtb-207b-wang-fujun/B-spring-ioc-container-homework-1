@@ -12,6 +12,23 @@
 @Component 已经可以支持声明一个 bean 了，为何还要再弄个 @Bean 出来？
 答案请写在对应分支的 README.md 文件中
 
+**Answer : **
+
+Component已经可以解决大部分Spring框架下编写的源码需求了，但是如果遇到了需要调取已经封装好的jar包或者Class，我们无法对这些class进行修改的情况下，可以使用@Bean方式来管理这些类
+
+```java
+@Configuration
+public class Myclass{
+
+@Bean
+	public Class1 getClass1(){
+		return new Class1();
+	}
+}
+```
+
+
+
 ### Problem 2
 
 分支：p2-starts-from-here

@@ -20,7 +20,7 @@ Component已经可以解决大部分Spring框架下编写的源码需求了，�
 @Configuration
 public class Myclass{
 
-@Bean
+	@Bean
 	public Class1 getClass1(){
 		return new Class1();
 	}

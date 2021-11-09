@@ -1,14 +1,17 @@
 package com.thoughtworks.capability.demospringioccontainer;
 
 
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 
 @Service
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE,proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class GreetingService {
+public class GreetingService implements ApplicationContextAware {
 
     public GreetingService() {
         System.out.println(GreetingService.class);
@@ -19,4 +22,8 @@ public class GreetingService {
     }
 
 
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        System.out.println(applicationContext.getBean(GreetingFactory.class));
+    }
 }

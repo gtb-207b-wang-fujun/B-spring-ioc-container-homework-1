@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class GreetingController {
 
-//    private final GreetingService greetingService;
-
     @Autowired
     private ObjectFactory<GreetingService> prototypeBeanObjectFactory;
 
